@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 在游戏推荐项目中的应用计划与进展</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f5f7fa; margin: 0; padding: 20px; color: #333; }
+    h1 { font-size: 28px; margin-bottom: 10px; }
+    h2 { font-size: 22px; margin-top: 30px; color: #2d5be3; }
+    h3 { font-size: 18px; margin-top: 20px; color: #333; }
+    .section { background-color: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 20px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 10px; line-height: 1.6; }
+    .tag { background-color: #e8f0fe; color: #2d5be3; font-weight: bold; padding: 2px 8px; border-radius: 6px; font-size: 12px; margin-right: 6px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    table, th, td { border: 1px solid #ddd; }
+    th, td { padding: 10px; text-align: left; }
+    th { background-color: #f0f3f7; }
+  </style>
+</head>
+<body>
+  <h1>AI 在游戏推荐项目中的应用计划与进展</h1>
+
+  <div class="section">
+    <h2>1. 游戏理解建设</h2>
+    <ul>
+      <li><span class="tag">目标</span>构建面向推荐系统的结构化游戏理解体系，支撑推荐生成、生命周期服务、LTV 建模等智能化任务</li>
+      <li><span class="tag">进展</span>已完成第一阶段预研，进入程序化量产阶段</li>
+    </ul>
+    <h3>阶段性成果</h3>
+    <ul>
+      <li><strong>标签体系设计与确立：</strong> 自主构建基于 GPT 模型的四大核心维度标签体系（游戏内容 / 用户画像 / 游戏动机 / 付费理解 ），具备逐级层级性与高复用性。</li>
+      <li><strong>AI 打标流程标准化：</strong> 已完成对 200 款游戏的结构化理解与打标，强调“理解优先”策略，并引入典型误判识别与修正机制。</li>
+      <li><strong>系统 DEMO 实现：</strong> <a href="https://idoia1027.github.io/tagsysdemo/" target="_blank">标签体系在线展示</a>，实现标签结构导航与样例标注可视化。</li>
+    </ul>
+    <h3>真实 DEMO 截图展示</h3>
+    <div style="text-align: center; margin: 20px 0;">
+      <img src="tagsys.jpg" alt="游戏理解标签体系系统展示" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <p style="margin-top: 10px; color: #666; font-size: 14px;">图：游戏理解标签体系在线DEMO界面截图</p>
+    </div>
+    <h3>核心功能价值</h3>
+    <table>
+      <tr>
+        <th>模块</th>
+        <th>功能说明</th>
+        <th>业务价值</th>
+      </tr>
+      <tr>
+        <td>标签体系</td>
+        <td>六维度逐级标签，覆盖玩法+动机+付费</td>
+        <td>支撑推荐、LTV、召回等多任务训练输入</td>
+      </tr>
+      <tr>
+        <td>游戏理解</td>
+        <td>结构化打标，强调“理解”而非映射</td>
+        <td>降低人工成本，提升批量游戏认知效率</td>
+      </tr>
+      <tr>
+        <td>DEMO 可视化</td>
+        <td>系统化结构导航 + 标签样例展示</td>
+        <td>内部对齐、培训、评审效率大幅提升</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>2. 游戏 LTV 预估应用</h2>
+    <ul>
+      <li><span class="tag">目标</span>通过ai等能力充分挖掘游戏内付费信息增加游戏用户付费理解，提升LTV预测准度</li>
+      <li><span class="tag">进展</span>初步预研中，正评估模型路径与输入设计</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>3. 游戏生成推荐</h2>
+    <ul>
+      <li><span class="tag">目标</span>通过生成式推荐，尝试提升游戏推荐当前的交互以及可解释性，为用户带来更好的体验 </li>
+      <li><span class="tag">进展</span>已完成双方案探索，构建原型 DEMO</li>
+    </ul>
+
+    <h3>功能尝试方向</h3>
+    <ul>
+      <li><strong>3.1 交互式生成推荐：</strong> 用户行为触发后，实时生成 Top5 推荐及个性化理由，适配推荐系统的个性化需求。</li>
+      <li><strong>3.2 可解释性生成推荐：</strong> 基于结构化标签、用户画像、行为链路等要素，输出具备说服逻辑与标签溯源能力的话术内容。</li>
+      <li><strong>展示地址：</strong> <a href="https://idoia1027.github.io/rec0714/" target="_blank">推荐生成 DEMO</a></li>
+    </ul>
+
+    <h3>当前页面能力对比总结</h3>
+    <table>
+      <tr>
+        <th>方案</th>
+        <th>核心机制</th>
+        <th>典型特点</th>
+        <th>适用场景</th>
+      </tr>
+      <tr>
+        <td>3.1 交互式推荐</td>
+        <td>基于实时输入进行 Top5 推荐 + 话术生成</td>
+        <td>即时响应、互动性强、高度个性化支持基于反馈实时调整</td>
+        <td>用户主动探索推荐、探索型新场景</td>
+      </tr>
+      <tr>
+        <td>3.2 可解释性推荐</td>
+        <td>基于用户历史行为，进行用户游戏画像分析并依此进行推荐</td>
+        <td>结构清晰、可解释性强、利于信任建立</td>
+        <td>我的页面等场景</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>4. 游戏生命周期服务</h2>
+    <ul>
+      <li><span class="tag">目标</span>通过ai能力更好的贯穿用户从新手期到流失期的内容服务链路</li>
+    </ul>
+
+    <h3>4.1 新手引导页</h3>
+    <ul>
+      <li><span class="tag">目标</span>为探索期用户生成结构化引导页</li>
+      <li><span class="tag">进展</span>已完成 DEMO 与模板设计</li>
+    </ul>
+    <p><strong>DEMO 地址：</strong> <a href="https://idoia1027.github.io/wujinqiyuenewuser/" target="_blank">新手引导页样例</a></p>
+    <h3>设计理念概述</h3>
+    <ul>
+      <li>基于生命周期识别模型生成动态详情页</li>
+      <li>适配游戏类型结构，输出模块化内容模板</li>
+      <li>核心围绕“认知焦虑 → 决策建议 → 引导深化”信息顺序</li>
+    </ul>
+    <h3>技术亮点与能力特色</h3>
+    <ul>
+      <li><strong>焦虑点驱动结构：</strong> 页面结构紧贴用户上手游戏初期的关键问题</li>
+      <li><strong>AI+结构化模块生成：</strong> 模块与类型映射，预设AI填充节点</li>
+      <li><strong>FAQ生成机制：</strong> 基于社区与视频语料自动归类出高频问题</li>
+      <li><strong>图文混排与动态拓展：</strong> 支持插图/语料/辅助图标自动生成与组合</li>
+
+    <h3>4.2 游戏流失召回</h3>
+    <ul>
+      <li><span class="tag">目标</span>针对流失用户自动化生成召回信息，结合push、推荐理由等触达手段</li>
+      <li><span class="tag">路径</span>探索话术生成 + 多模内容生成能力</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>5. 游戏付费助手</h2>
+    <ul>
+      <li><span class="tag">目标</span>构建用户内购决策支持系统，提升游戏用户付费体验</li>
+      <li><span class="tag">路径</span>step1.总结性、统计性付费信息
+        <li><strong>展示地址：</strong> <a href="https://idoia1027.github.io/ditiepaoku/" target="_blank">地铁跑酷test</a></li> 
+                                       step2.基础充值路径推荐
+        <li><strong>展示地址：</strong> <a href="https://idoia1027.github.io/beng3/" target="_blank">崩坏3test</a></li> 
+                                       step3. 个性化付费指导，基于用户历史习惯与当前进度，结合预期金额，给出具体付费建议</li>
+      <li><span class="tag">进展</span>1.思考卡点待对齐：①用户真的有这个需求吗？预期只覆盖极少量用户②我们的目标是什么？价值如何衡量？没准反帮用户省钱？③技术卡点预期，具备技术可行性但依赖结合真实游戏内部数据更准确</li>
+    </ul>
+
+  </div>
+</body>
+</html>
