@@ -17,6 +17,67 @@
     table, th, td { border: 1px solid #ddd; }
     th, td { padding: 10px; text-align: left; }
     th { background-color: #f0f3f7; }
+    
+    /* PDF查看器样式 */
+    .pdf-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: 1000;
+    }
+    
+    .pdf-content {
+      position: relative;
+      width: 90%;
+      height: 90%;
+      margin: 2% auto;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .pdf-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: #ff4444;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    
+    .pdf-info {
+      padding: 40px;
+      text-align: center;
+      color: #666;
+    }
+    
+    .pdf-info h3 {
+      color: #2d5be3;
+      margin-bottom: 20px;
+    }
+    
+    .pdf-download {
+      display: inline-block;
+      background: #2d5be3;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      margin: 10px;
+      font-weight: bold;
+    }
+    
+    .pdf-download:hover {
+      background: #1e4bd8;
+    }
   </style>
 </head>
 <body>
@@ -31,7 +92,7 @@
     <h3>阶段性成果</h3>
     <ul>
       <li><strong>标签体系设计与确立：</strong> 自主构建基于 GPT 模型的四大核心维度标签体系（游戏内容 / 用户画像 / 游戏动机 / 付费理解 ），具备逐级层级性与高复用性。</li>
-      <li><strong>AI 打标流程标准化：</strong> 已完成对 200 款游戏的结构化理解与打标，强调“理解优先”策略，并引入典型误判识别与修正机制。</li>
+      <li><strong>AI 打标流程标准化：</strong> 已完成对 200 款游戏的结构化理解与打标，强调"理解优先"策略，并引入典型误判识别与修正机制。</li>
       <li><strong>系统 DEMO 实现：</strong> <a href="https://idoia1027.github.io/tagsysdemo/" target="_blank">标签体系在线展示</a>，实现标签结构导航与样例标注可视化。</li>
     </ul>
     <h3>真实 DEMO 截图展示</h3>
@@ -53,7 +114,7 @@
       </tr>
       <tr>
         <td>游戏理解</td>
-        <td>结构化打标，强调“理解”而非映射</td>
+        <td>结构化打标，强调"理解"而非映射</td>
         <td>降低人工成本，提升批量游戏认知效率</td>
       </tr>
       <tr>
@@ -125,7 +186,7 @@
     <ul>
       <li>基于生命周期识别模型生成动态详情页</li>
       <li>适配游戏类型结构，输出模块化内容模板</li>
-      <li>核心围绕“认知焦虑 → 决策建议 → 引导深化”信息顺序</li>
+      <li>核心围绕"认知焦虑 → 决策建议 → 引导深化"信息顺序</li>
     </ul>
     <h3>技术亮点与能力特色</h3>
     <ul>
@@ -133,6 +194,7 @@
       <li><strong>AI+结构化模块生成：</strong> 模块与类型映射，预设AI填充节点</li>
       <li><strong>FAQ生成机制：</strong> 基于社区与视频语料自动归类出高频问题</li>
       <li><strong>图文混排与动态拓展：</strong> 支持插图/语料/辅助图标自动生成与组合</li>
+    </ul>
 
     <h3>4.2 游戏流失召回</h3>
     <ul>
@@ -145,14 +207,72 @@
     <h2>5. 游戏付费助手</h2>
     <ul>
       <li><span class="tag">目标</span>构建用户内购决策支持系统，提升游戏用户付费体验</li>
-      <li><span class="tag">路径</span>step1.总结性、统计性付费信息
-        <li><strong>展示地址：</strong> <a href="https://idoia1027.github.io/ditiepaoku/" target="_blank">地铁跑酷test</a></li> 
-                                       step2.基础充值路径推荐
-        <li><strong>展示地址：</strong> <a href="https://idoia1027.github.io/beng3/" target="_blank">崩坏3test</a></li> 
-                                       step3. 个性化付费指导，基于用户历史习惯与当前进度，结合预期金额，给出具体付费建议</li>
+      <li><span class="tag">路径</span>
+        <ul>
+          <li><strong>step1.总结性、统计性付费信息</strong>
+            <br><strong>展示地址：</strong> <a href="https://idoia1027.github.io/ditiepaoku/" target="_blank">地铁跑酷test</a>
+          </li>
+          <li><strong>step2.基础充值路径推荐</strong>
+            <br><strong>展示地址：</strong> <a href="https://idoia1027.github.io/beng3/" target="_blank">崩坏3test</a>
+          </li>
+          <li><strong>step3.个性化付费指导</strong>基于用户历史习惯与当前进度，结合预期金额，给出具体付费建议</li>
+        </ul>
+      </li>
       <li><span class="tag">进展</span>1.思考卡点待对齐：①用户真的有这个需求吗？预期只覆盖极少量用户②我们的目标是什么？价值如何衡量？没准反帮用户省钱？③技术卡点预期，具备技术可行性但依赖结合真实游戏内部数据更准确</li>
+      <li><span class="tag">其他</span>衍生需求
+        <ul>
+          <li><strong>相关文档：</strong> <a href="#" onclick="showPDFInfo()" style="color: #2d5be3; text-decoration: none; border-bottom: 1px solid #2d5be3;"> 基于dimo_gui的游戏画面理解与结构化标注系统需求2.pdf</a> <span style="color: #666; font-size: 12px;">(点击查看)</span></li>
+        </ul>
+      </li>
     </ul>
-
   </div>
+
+  <!-- PDF信息弹窗 -->
+  <div id="pdfModal" class="pdf-modal">
+    <div class="pdf-content">
+      <button class="pdf-close" onclick="closePDF()">关闭</button>
+      <div class="pdf-info">
+        <h3>游戏付费助手详细方案</h3>
+        <p>基于dimo_gui的游戏画面理解与结构化标注系统需求文档</p>
+        <p style="margin: 20px 0; color: #888;">该文档详细描述了游戏画面理解系统的技术架构、功能模块和实施计划。</p>
+        
+        <a href="基于dimo_gui的游戏画面理解与结构化标注系统需求2.pdf" class="pdf-download" target="_blank">
+          下载PDF文档
+        </a>
+        
+        <a href="#" onclick="previewPDF()" class="pdf-download" style="background: #28a745;">
+          在线预览
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showPDFInfo() {
+      document.getElementById('pdfModal').style.display = 'block';
+    }
+    
+    function closePDF() {
+      document.getElementById('pdfModal').style.display = 'none';
+    }
+    
+    function previewPDF() {
+      // 尝试在新窗口中打开PDF
+      var pdfPath = '基于dimo_gui的游戏画面理解与结构化标注系统需求2.pdf';
+      var newWindow = window.open(pdfPath, '_blank');
+      
+      // 如果新窗口打开失败，提示下载
+      if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+        alert('PDF预览失败，请直接下载文档查看');
+      }
+    }
+    
+    // 点击模态框外部关闭
+    document.getElementById('pdfModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closePDF();
+      }
+    });
+  </script>
 </body>
 </html>
